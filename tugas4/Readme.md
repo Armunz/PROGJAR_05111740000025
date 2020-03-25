@@ -36,7 +36,11 @@ Hasilnya akan seperti berikut.
 ## Proses Upload
 Pada **client.py** inputkan string **upload** dan pilih **nama file** yang akan di upload ke server.
 
+![enter image description here](https://github.com/Armunz/PROGJAR_05111740000025/blob/master/tugas4/dokumentasi/upload-proses.JPG?raw=true)
+
 Berikut hasilnya.
+
+![enter image description here](https://github.com/Armunz/PROGJAR_05111740000025/blob/master/tugas4/dokumentasi/hasil%20upload.JPG?raw=true)
 
 ## Proses List
 Pada **client.py** inputkan string **list** yang nantinya akan menampilkan list file yang ada pada server.
@@ -45,6 +49,5 @@ Pada **client.py** inputkan string **list** yang nantinya akan menampilkan list 
 Berikut hasilnya.
 
 ![enter image description here](https://raw.githubusercontent.com/Armunz/PROGJAR_05111740000025/master/tugas4/dokumentasi/hasil%20server.png)
-
 
 
