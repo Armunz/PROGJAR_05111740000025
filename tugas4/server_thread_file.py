@@ -14,20 +14,21 @@ class ProcessTheClient(threading.Thread):
         threading.Thread.__init__(self)
 
     def run(self):
-        data = b''
         while True:
-            data_client = self.connection.recv(1024)
-            if not data_client:
-                break
-            data += data_client
+            data = b''
+            while True:
+                data_client = self.connection.recv(1024)
+                if not data_client:
+                    break
+                data += data_client
             if data:
                 dd = b'a'
                 if (len(data.split(b'split', 1)) == 2):
                     dd, data = data.split(b'split', 1)
-                d = data.decode()
-                cstring = d.split(" ")
-                command = cstring[0].strip()
-                hasil = pm.proses(d, dd)
+                    d = data.decode()
+                    cstring = d.split(" ")
+                    command = cstring[0].strip()
+                    hasil = pm.proses(d, dd)
                 if(command == "download"):
                     self.connection.sendall(hasil)
                 elif(command == "upload"):
