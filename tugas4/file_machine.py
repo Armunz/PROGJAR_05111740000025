@@ -47,7 +47,7 @@ class fileMachine:
                 logging.warning("upload")
                 nama = cstring[1].strip()
                 p.Upload(nama, data)
-                return "Ok"
+                return "Upload Berhasil"
             elif (command=='list'):
                 logging.warning("list")
                 hasil = p.List()

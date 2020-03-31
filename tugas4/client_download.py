@@ -13,6 +13,6 @@ def download(sock, command, fileName):
         while (data):
             f.write(data)
             data = sock.recv(1024)
-        print("File Downloaded")
+        print("Download Berhasil")
         f.close()
     print("Closing Download Process")
