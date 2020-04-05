@@ -78,8 +78,6 @@ class ChatClient:
         else:
             return "Error, {}" . format(result['message'])
     def logout(self):
-        if (self.tokenid==""):
-            return "Tidak bisa Logout karena belum Login"
         string="logout {} \r\n" . format(self.tokenid)
         result = self.sendstring(string)
         if result['status']=='OK':

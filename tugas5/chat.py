@@ -92,8 +92,9 @@ class Chat:
 	def logout(self):
                 if(bool(self.sessions) == True):
                         self.sessions.clear()
+                        return {'status': 'OK'}
                 else:
-                        return("Belum Login")
+                        return {'status': 'ERROR', 'message': 'Belum Login'}
 
 
 if __name__=="__main__":
