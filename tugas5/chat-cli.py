@@ -29,6 +29,8 @@ class ChatClient:
                 return self.sendmessage(usernameto,message)
             elif (command=='inbox'):
                 return self.inbox()
+            elif (command=='logout'):
+                return self.logout()
             else:
                 return "*Maaf, command tidak benar"
         except IndexError:
@@ -75,6 +77,15 @@ class ChatClient:
             return "{}" . format(json.dumps(result['messages']))
         else:
             return "Error, {}" . format(result['message'])
+    def logout(self):
+        if (self.tokenid==""):
+            return "Tidak bisa Logout karena belum Login"
+        string="logout {} \r\n" . format(self.tokenid)
+        result = self.sendstring(string)
+        if result['status']=='OK':
+            return "Logout Berhasil"
+        else:
+            return "Error, {}" . format(self.tokenid)
 
 
 
@@ -84,7 +95,7 @@ if __name__=="__main__":
     while True:
         print("\n")
         print("List User: " + str(c.users.keys()) + " dan Passwordnya: " + str(c.users['dwi']['password']) + ", " + str(c.users['prasetya']['password']) + ", " + str(c.users['armunanta']['password']))
-        print("Command:\n1. Login: auth [username] [password]\n2. Mengirim pesan: send [username to] [message]\n3. Melihat pesan: inbox\n")
+        print("Command:\n1. Login: auth [username] [password]\n2. Mengirim pesan: send [username to] [message]\n3. Melihat pesan: inbox\n4. Logout: logout\n")
         cmdline = input("Command {}:" . format(cc.tokenid))
         print(cc.proses(cmdline))
 
