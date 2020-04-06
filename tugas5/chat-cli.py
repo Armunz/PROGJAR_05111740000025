@@ -84,7 +84,7 @@ class ChatClient:
         string="info {} \r\n" . format(username)
         result = self.sendstring(string)
     def logout(self):
-        string="logout {} \r\n" . format(self.tokenid)
+        string="logout \r\n"
         result = self.sendstring(string)
         if result['status']=='OK':
             self.tokenid=""
