@@ -9,9 +9,9 @@ class Chat:
 	def __init__(self):
 		self.sessions={}
 		self.users = {}
-		self.users['dwi']={ 'nama': 'Dwi', 'negara': 'Indonesia', 'password': '12345', 'incoming' : {}, 'outgoing': {}}
-		self.users['prasetya']={ 'nama': 'Prasetya', 'negara': 'Indonesia', 'password': '54321', 'incoming': {}, 'outgoing': {}}
-		self.users['armunanta']={ 'nama': 'Armunanta', 'negara': 'Indonesia', 'password': '67890','incoming': {}, 'outgoing':{}}
+		self.users['messi'] = {'nama': 'Lionel Messi', 'negara': 'Argentina', 'password': 'surabaya', 'incoming': {}, 'outgoing': {}}
+		self.users['henderson'] = {'nama': 'Jordan Henderson', 'negara': 'Inggris', 'password': 'surabaya', 'incoming': {}, 'outgoing': {}}
+		self.users['lineker'] = {'nama': 'Gary Lineker', 'negara': 'Inggris', 'password': 'surabaya', 'incoming': {}, 'outgoing': {}}
 	def proses(self,data):
 		j=data.split(" ")
 		try:
@@ -37,6 +37,9 @@ class Chat:
 				return self.get_inbox(username)
 			elif (command=='logout'):
 				return  self.logout()
+			elif (command=='info'):
+				username = j[1].strip()
+				return self.get_user(username)
 			else:
 				return {'status': 'ERROR', 'message': '**Protocol Tidak Benar'}
 		except KeyError:
