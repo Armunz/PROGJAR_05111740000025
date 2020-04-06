@@ -36,7 +36,7 @@ class Chat:
 				logging.warning("INBOX: {}" . format(sessionid))
 				return self.get_inbox(username)
 			elif (command=='logout'):
-                                return self.logout()
+				return  self.logout()
 			else:
 				return {'status': 'ERROR', 'message': '**Protocol Tidak Benar'}
 		except KeyError:
@@ -89,13 +89,13 @@ class Chat:
 				msgs[users].append(s_fr['incoming'][users].get_nowait())
 			
 		return {'status': 'OK', 'messages': msgs}
-	def logout(self):
-                if(bool(self.sessions) == True):
-                        self.sessions.clear()
-                        return {'status': 'OK'}
-                else:
-                        return {'status': 'ERROR', 'message': 'Belum Login'}
 
+	def logout(self):
+		if (bool(self.sessions) == True):
+			self.sessions.clear()
+			return {'status': 'OK'}
+		else:
+			return {'status': 'ERROR', 'message': 'Belum Login'}
 
 if __name__=="__main__":
 	j = Chat()
