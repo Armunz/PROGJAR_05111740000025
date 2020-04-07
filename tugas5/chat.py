@@ -38,8 +38,7 @@ class Chat:
 			elif (command=='logout'):
 				return  self.logout()
 			elif (command=='info'):
-				username = j[1].strip()
-				return self.get_user(username)
+				return self.info()
 			else:
 				return {'status': 'ERROR', 'message': '**Protocol Tidak Benar'}
 		except KeyError:
@@ -99,6 +98,8 @@ class Chat:
 			return {'status': 'OK'}
 		else:
 			return {'status': 'ERROR', 'message': 'Belum Login'}
+	def info(self):
+		return {'status': 'OK', 'message': self.sessions}
 
 if __name__=="__main__":
 	j = Chat()

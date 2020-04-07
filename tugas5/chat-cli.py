@@ -32,8 +32,7 @@ class ChatClient:
             elif (command=='logout'):
                 return self.logout()
             elif (command=='info'):
-                username=j[1].strip()
-                return self.get_user(username)
+                return self.info()
             else:
                 return "*Maaf, command tidak benar"
         except IndexError:
@@ -80,9 +79,13 @@ class ChatClient:
             return "{}" . format(json.dumps(result['messages']))
         else:
             return "Error, {}" . format(result['message'])
-    def get_user(self, username):
-        string="info {} \r\n" . format(username)
+    def info(self):
+        string="info {} \r\n"
         result = self.sendstring(string)
+        list_user_aktif="User yang Aktif:\n"
+        if result['status']=='OK':
+            list_user_aktif += f"{result['message']}"
+        return list_user_aktif
     def logout(self):
         string="logout \r\n"
         result = self.sendstring(string)
@@ -100,7 +103,7 @@ if __name__=="__main__":
     while True:
         print("\n")
         print("List User: " + str(c.users.keys()) + " dan Passwordnya: " + str(c.users['messi']['password']) + ", " + str(c.users['henderson']['password']) + ", " + str(c.users['lineker']['password']))
-        print("Command:\n1. Login: auth [username] [password]\n2. Mengirim pesan: send [username to] [message]\n3. Melihat pesan: inbox\n4. Logout: logout\n5. Get User Info: info [username]\n")
+        print("Command:\n1. Login: auth [username] [password]\n2. Mengirim pesan: send [username to] [message]\n3. Melihat pesan: inbox\n4. Logout: logout\n5. Melihat user yang aktif: info\n")
         cmdline = input("Command {}:" . format(cc.tokenid))
         print(cc.proses(cmdline))
 
