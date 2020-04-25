@@ -19,19 +19,18 @@ class ProcessTheClient(threading.Thread):
 		rcv=""
 		while True:
 			try:
-				data = self.connection.recv(32)
+				data = self.connection.recv(1024)
 				if data:
 					d = data.decode()
 					rcv=rcv+d
-					if rcv[-2:]=='\r\n':
-						#end of command, proses string
-						logging.warning("data dari client: {}" . format(rcv))
-						hasil = httpserver.proses(rcv)
-						hasil=hasil+"\r\n\r\n"
-						logging.warning("balas ke  client: {}" . format(hasil))
-						self.connection.sendall(hasil.encode())
-						rcv=""
-						self.connection.close()
+					#end of command, proses string
+					logging.warning("data dari client: {}" . format(rcv))
+					hasil = httpserver.proses(rcv)
+					hasil=hasil+"\r\n\r\n"
+					logging.warning("balas ke  client: {}" . format(hasil))
+					self.connection.sendall(hasil.encode())
+					rcv=""
+					self.connection.close()
 				else:
 					break
 			except OSError as e:

@@ -51,7 +51,7 @@ class HttpServerScratch:
 				return self.http_get(object_address, all_headers)
 			if (method=='POST'):
 				object_address = j[1].strip()
-				# print("All Headers: ", all_headers['content-disposition'])
+				print("All Headers: ", all_headers)
 				# print("Object Address Post: ", object_address)
 				return self.http_post(object_address, all_headers)
 			else:
@@ -60,7 +60,10 @@ class HttpServerScratch:
 			return self.response(400,'Bad Request','',{})
 	def http_get(self,object_address,headers):
 		files = glob('./*')
-		thedir='.'
+		if os.name == 'nt':
+			temp = [n.replace('\\', '/') for n in files]
+			files = temp
+		thedir = '.'
 		if thedir+object_address not in files:
 			return self.response(404,'Not Found','',{})
 		fp = open(thedir+object_address,'r')
@@ -74,9 +77,12 @@ class HttpServerScratch:
 		
 		return self.response(200,'OK',isi,headers)
 	def http_post(self,object_address,headers):
-		print(headers[-1])
+		print(headers[-1:])
+		name = headers[-1]
+		temp = name.split("=")
+		print(temp)
+		isi = temp[1]
 		headers ={}
-		isi = "kosong"
 		return self.response(200,'OK',isi,headers)
 		
 			 	
