@@ -6,17 +6,29 @@ Disini saya menggunakan Jumlah request 1000 dan Concurrency 1, 10, 50.
 
 ### 1. 1000 Request 1 Concurrency
 
+Command:
+
+     ab -n 1000 -c 1 http://127.0.0.1:46000/
+
 ![enter image description here](https://github.com/Armunz/PROGJAR_05111740000025/blob/master/tugas9/dokum/-n%201000%20-c%201.png?raw=true)
 
 ![enter image description here](https://github.com/Armunz/PROGJAR_05111740000025/blob/master/tugas9/dokum/-n%201000%20-c%201%20%282%29.png?raw=true)
 
 ### 2. 1000 Request 10 Concurrency
 
+Command:
+
+     ab -n 1000 -c 10 http://127.0.0.1:46000/
+
 ![enter image description here](https://github.com/Armunz/PROGJAR_05111740000025/blob/master/tugas9/dokum/-n%201000%20-c%2010.png?raw=true)
 
 ![enter image description here](https://github.com/Armunz/PROGJAR_05111740000025/blob/master/tugas9/dokum/-n%201000%20-c%2010%20%282%29.png?raw=true)
 
 ### 3. 1000 Request 50 Concurrency
+
+Command:
+
+     ab -n 1000 -c 50 http://127.0.0.1:46000/
 
 ![enter image description here](https://github.com/Armunz/PROGJAR_05111740000025/blob/master/tugas9/dokum/-n%201000%20-c%2050.png?raw=true)
 
@@ -31,17 +43,29 @@ Disini saya menggunakan Jumlah request 1000 dan Concurrency 1, 10, 50.
 
 ### 1. 1000 Request 1 Concurrency
 
+Command:
+
+     ab -n 1000 -c 1 http://127.0.0.1:45000/
+
 ![enter image description here](https://github.com/Armunz/PROGJAR_05111740000025/blob/master/tugas9/dokum/async/-n%201000%20-c%201.png?raw=true)
 
 ![enter image description here](https://github.com/Armunz/PROGJAR_05111740000025/blob/master/tugas9/dokum/async/-n%201000%20-c%201%20%282%29.png?raw=true)
 
 ### 2. 1000 Request 10 Concurrency
 
+Command:
+
+     ab -n 1000 -c 10 http://127.0.0.1:45000/
+
 ![enter image description here](https://github.com/Armunz/PROGJAR_05111740000025/blob/master/tugas9/dokum/async/-n%201000%20-c%2010.png?raw=true)
 
 ![enter image description here](https://github.com/Armunz/PROGJAR_05111740000025/blob/master/tugas9/dokum/async/-n%201000%20-c%2010%20%282%29.png?raw=true)
 
 ### 3. 1000 Request 50 Concurrency
+
+Command:
+
+     ab -n 1000 -c 50 http://127.0.0.1:45000/
 
 ![enter image description here](https://github.com/Armunz/PROGJAR_05111740000025/blob/master/tugas9/dokum/async/-n%201000%20-c%2050.png?raw=true)
 
