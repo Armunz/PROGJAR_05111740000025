@@ -51,4 +51,4 @@ Disini saya menggunakan Jumlah request 1000 dan Concurrency 1, 10, 50.
 |--|--|--|--|--|--|--|--|--|
 |1|1|0.355 second|1000|0|122000 bytes|2816.41 [#/sec] mean|0.355 [ms] (mean, across all concurrent request)|335.56 [KBytes/sec] received|
 |2|10|0.318 second|1000|0|122000 bytes|3147.73 [#/sec] mean|0.318 [ms] (mean, across all concurrent request)|375.02 [KBytes/sec] received|
-|3|10|0.288 second|1000|0|122000 bytes|3471.45 [#/sec] mean|0.288 [ms] (mean, across all concurrent request)|413.59[KBytes/sec] received|
+|3|10|0.288 second|1000|0|122000 bytes|3471.45 [#/sec] mean|0.288 [ms] (mean, across all concurrent request)|413.59 [KBytes/sec] received|
