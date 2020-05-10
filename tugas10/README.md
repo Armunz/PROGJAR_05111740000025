@@ -46,7 +46,7 @@ Command:
 |--|--|--|--|--|--|--|--|--|
 |1|1|0.860 second|1000|0|122000 bytes|1163.32 [#/sec] mean|0.860 [ms] (mean, across all concurrent request)|138.60 [KBytes/sec] received|
 |2|10|0.426 second|1000|0|122000 bytes|2345.40 [#/sec] mean|0.426 [ms] (mean, across all concurrent request)|279.43 [KBytes/sec] received|
-|3|10|1.098 second|1000|0|122000 bytes|910.84 [#/sec] mean|1.098 [ms] (mean, across all concurrent request)|108.52 [KBytes/sec] received|
+|3|50|1.098 second|1000|0|122000 bytes|910.84 [#/sec] mean|1.098 [ms] (mean, across all concurrent request)|108.52 [KBytes/sec] received|
 
 Lalu, kita bandingkan dengan hasil dari **Server_Thread** biasa.
 | Test | Concurrency Level | Time taken for test | Complete request | Failed Request | Total Transferred | Request Per Second | Time Per Request | Transfer Rate|
