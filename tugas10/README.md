@@ -2,7 +2,7 @@
 # Apache Benchmark pada Asynchronous_Server_Thread dan Server_Thread dengan Load Balancer
 
 
-Pertama, jalankan file **runserver.sh**, lalu jalankan **lb.py** (Load Balancer). Lalu akses http://localhost:44444/page.html.
+Pertama, aktifkan dulu server-nya, lalu jalankan file **runserver.sh**, lalu jalankan **lb.py** (Load Balancer). Lalu akses http://localhost:44444/page.html.
 
 ![enter image description here](https://github.com/Armunz/PROGJAR_05111740000025/blob/master/tugas10/dokum/page.html.png?raw=true)
 
